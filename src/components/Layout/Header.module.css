@@ -6,20 +6,15 @@
   backdrop-filter: blur(14px);
 }
 
-/* Перфорация плёнки на нижней кромке шапки — первое, что видит гость,
-   и та же деталь, что закрывает подвал. Статичная сигнатура сайта вместо
-   прежнего анимированного луча. */
+/* Кромка на нижней границе шапки — та же деталь, что закрывает подвал. */
 .header::after {
   content: '';
   position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
-  height: 6px;
-  background-image: radial-gradient(circle, var(--perf-dot) 1.4px, transparent 1.6px);
-  background-repeat: repeat-x;
-  background-position: left center;
-  background-size: var(--perf-size) 6px;
+  height: 1px;
+  background-color: var(--line-strong);
 }
 
 .inner {
