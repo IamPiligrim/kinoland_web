@@ -4,19 +4,15 @@
   padding-block: var(--s-5) var(--s-4);
 }
 
-/* Та же перфорация плёнки, что между секциями главной — подвал закрывает
-   «бобину», а не обрывается волосяной линией. */
+/* Та же кромка, что на нижней границе шапки — подвал закрывается ей. */
 .footer::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 6px;
-  background-image: radial-gradient(circle, var(--perf-dot) 1.4px, transparent 1.6px);
-  background-repeat: repeat-x;
-  background-position: left center;
-  background-size: var(--perf-size) 6px;
+  height: 1px;
+  background-color: var(--line-strong);
 }
 
 .grid {
