@@ -1,0 +1,103 @@
+/* Первый экран — сегодняшнее расписание. Никакого слайдера-баннера:
+   герой страницы это дата и то, что идёт прямо сейчас. */
+
+.heroTitle {
+  font-size: var(--fs-hero);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-display);
+  margin-top: 0.75rem;
+}
+
+.heroLead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  margin-top: var(--s-2);
+  margin-bottom: var(--s-4);
+  font-size: var(--fs-lead);
+  color: var(--text);
+}
+
+.heroLead b {
+  font-family: var(--font-display);
+  font-weight: var(--weight-display-s);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: var(--tracking-display-xs);
+}
+
+.shelfFoot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-2);
+  margin-top: var(--s-3);
+}
+
+/* Три намерения — три двери. Кино уже раскрыто выше, здесь кафе и банкеты. */
+.doors {
+  display: grid;
+  gap: var(--s-3);
+  grid-template-columns: 1fr;
+}
+
+/* Верхний край в цвет кирпича — как окрашенный обрез купона у кассы,
+   а не рамка карточки со всех сторон. */
+.door {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  padding: var(--s-4);
+  background-color: var(--surface);
+  border-top: 3px solid var(--beam);
+  border-radius: 0 0 var(--radius-m) var(--radius-m);
+  box-shadow: var(--shadow-lift);
+}
+
+.doorTitle {
+  font-size: var(--fs-h2);
+  letter-spacing: var(--tracking-display-s);
+}
+
+.doorText {
+  max-width: 40ch;
+  color: var(--text);
+}
+
+.doorPrice {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: var(--weight-display-s);
+  letter-spacing: var(--tracking-display-xs);
+  color: var(--text-h);
+  font-variant-numeric: tabular-nums;
+}
+
+.doorActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-1);
+  margin-top: auto;
+  padding-top: var(--s-2);
+}
+
+.newsGrid {
+  display: grid;
+  gap: var(--s-3);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 48rem) {
+  .doors,
+  .newsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 64rem) {
+  .newsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--s-4);
+  }
+}

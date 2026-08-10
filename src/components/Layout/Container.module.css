@@ -1,0 +1,36 @@
+.container {
+  width: 100%;
+  max-width: var(--page-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section {
+  padding-block: var(--section-y);
+}
+
+/* Страница раздела начинается ближе к шапке: заголовок здесь — не герой,
+   а подпись к содержимому. Правило стоит после .section, поэтому
+   переопределение не зависит от порядка сборки CSS. */
+.tight {
+  padding-top: var(--s-4);
+}
+
+/* Перфорация плёнки вместо волосяной линии: сигнатура сайта на границе
+   между разделами. Статична — ничего не тает и не мигает. */
+.divided {
+  position: relative;
+}
+
+.divided::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background-image: radial-gradient(circle, var(--perf-dot) 1.4px, transparent 1.6px);
+  background-repeat: repeat-x;
+  background-position: left center;
+  background-size: var(--perf-size) 6px;
+}

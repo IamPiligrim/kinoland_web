@@ -1,0 +1,124 @@
+@import './styles/reset.css';
+@import './styles/tokens.css';
+
+/* Базовая типографика. Всё остальное — в CSS-модулях компонентов. */
+
+html {
+  font-size: 100%;
+}
+
+body {
+  min-height: 100svh;
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--text);
+  background-color: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  min-height: 100svh;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--tracking-display);
+  color: var(--text-h);
+  text-wrap: balance;
+}
+
+h1,
+h2 {
+  font-weight: var(--weight-display);
+}
+
+h1 {
+  font-size: var(--fs-h1);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+}
+
+/* На ступень легче h1/h2: геометрия Unbounded уже даёт вес символу,
+   на кегле h3 максимальное начертание выглядело бы как отдельная вывеска. */
+h3 {
+  font-size: var(--fs-h3);
+  font-weight: var(--weight-display-s);
+  letter-spacing: var(--tracking-display-xs);
+}
+
+p {
+  text-wrap: pretty;
+}
+
+a {
+  color: inherit;
+  text-decoration-color: var(--beam-line);
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  text-decoration-color: var(--beam);
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: var(--radius-s);
+}
+
+::selection {
+  background-color: var(--beam);
+  color: var(--beam-ink);
+}
+
+strong,
+b {
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+/* Текст только для скринридера: подписи к состояниям, которые в интерфейсе
+   переданы цветом или положением. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Переход к содержимому — первая цель табуляции на каждой странице. */
+.skip-link {
+  position: absolute;
+  top: var(--s-1);
+  left: var(--s-1);
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  background-color: var(--beam);
+  color: var(--beam-ink);
+  border-radius: var(--radius-s);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  text-decoration: none;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+}

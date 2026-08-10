@@ -1,0 +1,23 @@
+.heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s-1) var(--s-3);
+  margin-bottom: var(--s-4);
+}
+
+.text {
+  max-width: 46ch;
+}
+
+.lead {
+  margin-top: var(--s-2);
+  max-width: 56ch;
+  font-size: var(--fs-lead);
+  color: var(--text);
+}
+
+.action {
+  flex: none;
+}

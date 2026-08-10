@@ -1,0 +1,60 @@
+/* Три равноправных способа заказа. Сайт не принимает заказы сам —
+   и говорит об этом честно, а не имитирует корзину. */
+
+.grid {
+  display: grid;
+  gap: var(--s-2);
+  grid-template-columns: 1fr;
+}
+
+.channel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  padding: var(--s-3);
+  background-color: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  text-decoration: none;
+  transition:
+    border-color var(--dur-base) var(--ease),
+    background-color var(--dur-base) var(--ease);
+}
+
+.channel:hover {
+  border-color: var(--beam);
+  background-color: var(--surface-hi);
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  color: var(--beam);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: var(--weight-display-s);
+  letter-spacing: var(--tracking-display-xs);
+  color: var(--text-h);
+}
+
+.description {
+  font-size: var(--fs-small);
+  color: var(--text);
+}
+
+.note {
+  margin-top: var(--s-2);
+  font-size: var(--fs-small);
+  color: var(--text);
+}
+
+@media (min-width: 48rem) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--s-3);
+  }
+}

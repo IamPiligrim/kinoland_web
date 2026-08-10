@@ -1,0 +1,138 @@
+.title {
+  margin-top: 0.75rem;
+  font-size: var(--fs-hero);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-display);
+}
+
+.lead {
+  margin-top: var(--s-2);
+  max-width: 54ch;
+  font-size: var(--fs-lead);
+}
+
+.facts {
+  display: grid;
+  gap: var(--s-2) var(--s-4);
+  margin-top: var(--s-5);
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.fact {
+  padding-top: var(--s-2);
+  border-top: 1px solid var(--line);
+}
+
+.factValue {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  font-weight: var(--weight-display-s);
+  letter-spacing: var(--tracking-display-s);
+  color: var(--text-h);
+  font-variant-numeric: tabular-nums;
+}
+
+.factLabel {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: var(--fs-micro);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-utility);
+  color: var(--text);
+}
+
+.block {
+  margin-top: var(--section-y);
+}
+
+.list {
+  display: grid;
+  gap: var(--s-3) var(--s-4);
+  grid-template-columns: 1fr;
+}
+
+.listItem {
+  padding-top: var(--s-2);
+  border-top: 1px solid var(--line);
+}
+
+.listTitle {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: var(--weight-display-s);
+  letter-spacing: var(--tracking-display-xs);
+  color: var(--text-h);
+}
+
+.listText {
+  margin-top: 0.375rem;
+  color: var(--text);
+}
+
+/* Аренда зала — отдельная опция, поэтому и выглядит иначе: в свете лампы. */
+.option {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: var(--s-5);
+  padding: var(--s-4);
+  background-color: var(--beam-soft);
+  border: 1px solid var(--beam-line);
+  border-radius: var(--radius-m);
+}
+
+.optionTitle {
+  font-size: var(--fs-h2);
+  letter-spacing: var(--tracking-display-s);
+}
+
+.optionText {
+  max-width: 56ch;
+}
+
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--s-3) var(--s-5);
+  margin-top: var(--s-5);
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--line);
+}
+
+.contactPhone {
+  font-family: var(--font-display);
+  font-size: var(--fs-h1);
+  font-weight: var(--weight-display-s);
+  letter-spacing: var(--tracking-display);
+  color: var(--text-h);
+  text-decoration: none;
+  font-variant-numeric: tabular-nums;
+}
+
+.contactPhone:hover {
+  color: var(--beam);
+}
+
+.contactNote {
+  max-width: 40ch;
+  font-size: var(--fs-small);
+  color: var(--text);
+}
+
+.contactActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+
+@media (min-width: 48rem) {
+  .facts {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

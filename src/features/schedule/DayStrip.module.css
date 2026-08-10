@@ -1,0 +1,52 @@
+/* Лента дней. На узких экранах прокручивается горизонтально от края до края
+   и остаётся на виду при скролле — по ней ориентируются весь просмотр. */
+
+.wrap {
+  position: sticky;
+  top: var(--header-h);
+  z-index: 3;
+  margin-inline: calc(var(--gutter) * -1);
+  padding-inline: var(--gutter);
+  background-color: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+
+.strip {
+  display: flex;
+  gap: var(--s-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.strip::-webkit-scrollbar {
+  display: none;
+}
+
+.day {
+  display: block;
+  padding: 0.875rem 0;
+  border-bottom: 2px solid transparent;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-utility);
+  white-space: nowrap;
+  color: var(--text);
+  text-decoration: none;
+  font-variant-numeric: tabular-nums;
+  transition:
+    color var(--dur-fast) var(--ease),
+    border-color var(--dur-fast) var(--ease);
+}
+
+.day:hover {
+  color: var(--text-h);
+}
+
+.current {
+  color: var(--text-h);
+  border-bottom-color: var(--beam);
+}

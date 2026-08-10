@@ -1,0 +1,89 @@
+/* Постер — единственный источник произвольного цвета на сайте. Пока съёмки
+   и постеров от заказчика нет, рисуем типографический вариант в палитре
+   центра: название крупно, рейтинг в углу, тёплая засветка от луча. */
+
+.poster {
+  position: relative;
+  container-type: inline-size;
+  overflow: hidden;
+  aspect-ratio: 2 / 3;
+  border-radius: var(--radius-m);
+  background-color: var(--surface);
+  box-shadow: var(--shadow-lift);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 7cqi;
+}
+
+.tone0 {
+  background-image: linear-gradient(
+    202deg,
+    color-mix(in oklab, var(--beam) 20%, var(--surface)),
+    var(--surface) 58%
+  );
+}
+
+.tone1 {
+  background-image: linear-gradient(
+    162deg,
+    color-mix(in oklab, var(--curtain) 55%, var(--surface)),
+    var(--surface) 72%
+  );
+}
+
+.tone2 {
+  background-image: linear-gradient(
+    215deg,
+    color-mix(in oklab, var(--text-h) 10%, var(--surface)),
+    var(--surface) 52%
+  );
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 12.5cqi;
+  font-weight: var(--weight-display);
+  line-height: 1.02;
+  letter-spacing: var(--tracking-display);
+  color: var(--text-h);
+  text-wrap: balance;
+  hyphens: auto;
+}
+
+.original {
+  margin-top: 3cqi;
+  font-size: 4.4cqi;
+  line-height: 1.3;
+  color: var(--text);
+}
+
+.rating {
+  position: absolute;
+  top: 6cqi;
+  right: 6cqi;
+  font-size: 4.2cqi;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--text);
+}
+
+/* Тонкая рамка поверх любого постера — держит картинку в общей сетке. */
+.frame {
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  pointer-events: none;
+}

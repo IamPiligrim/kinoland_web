@@ -1,0 +1,44 @@
+.main {
+  flex: 1;
+  padding-bottom: var(--dock-h);
+}
+
+/* Постоянный CTA на мобильном: закреплён снизу, чтобы «купить билеты»
+   было доступно с любого экрана без возврата в шапку. */
+.dock {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  gap: var(--s-1);
+  height: var(--dock-h);
+  padding: 0 var(--gutter) env(safe-area-inset-bottom);
+  background-color: color-mix(in oklab, var(--bg) 92%, transparent);
+  backdrop-filter: blur(14px);
+  border-top: 1px solid var(--line);
+}
+
+.dockCta {
+  flex: 1;
+}
+
+.dockPhone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  flex: none;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-s);
+  color: var(--text-h);
+}
+
+@media (min-width: 60rem) {
+  .dock {
+    display: none;
+  }
+}

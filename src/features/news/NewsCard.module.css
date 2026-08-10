@@ -1,0 +1,45 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--line);
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+}
+
+.date {
+  font-size: var(--fs-micro);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-utility);
+  color: var(--text);
+}
+
+.title {
+  font-size: var(--fs-h3);
+  letter-spacing: var(--tracking-display-s);
+}
+
+.titleLink {
+  text-decoration: none;
+}
+
+.titleLink:hover {
+  color: var(--beam);
+}
+
+.excerpt {
+  color: var(--text);
+}
+
+.valid {
+  margin-top: auto;
+  padding-top: 0.25rem;
+  font-size: var(--fs-small);
+  color: var(--beam);
+}

@@ -1,0 +1,177 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background-color: color-mix(in oklab, var(--bg) 86%, transparent);
+  backdrop-filter: blur(14px);
+}
+
+/* Перфорация плёнки на нижней кромке шапки — первое, что видит гость,
+   и та же деталь, что закрывает подвал. Статичная сигнатура сайта вместо
+   прежнего анимированного луча. */
+.header::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 6px;
+  background-image: radial-gradient(circle, var(--perf-dot) 1.4px, transparent 1.6px);
+  background-repeat: repeat-x;
+  background-position: left center;
+  background-size: var(--perf-size) 6px;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  height: var(--header-h);
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: var(--weight-display);
+  /* Прописные не поджимают: отрицательный трекинг слепил бы «КИНОЛЕНД». */
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: var(--text-h);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav {
+  display: none;
+}
+
+.link {
+  padding-block: 0.5rem;
+  font-size: var(--fs-micro);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-utility);
+  color: var(--text);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease);
+}
+
+.link:hover {
+  color: var(--text-h);
+}
+
+.linkActive {
+  color: var(--beam);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--s-1);
+  margin-left: auto;
+}
+
+.iconButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-s);
+  color: var(--text-h);
+  text-decoration: none;
+  transition: border-color var(--dur-fast) var(--ease);
+}
+
+.iconButton:hover {
+  border-color: var(--beam);
+  color: var(--beam);
+}
+
+.cta {
+  display: none;
+}
+
+/* --- Мобильное меню ---------------------------------------------------- */
+
+.panel {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  padding: var(--gutter);
+  background-color: var(--scrim);
+  backdrop-filter: blur(18px);
+}
+
+.panelHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: calc(var(--header-h) - var(--gutter) + 0.75rem);
+}
+
+.panelNav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-1);
+  margin-top: var(--s-4);
+}
+
+.panelLink {
+  padding-block: 0.625rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 1.4rem + 2vw, 2.5rem);
+  font-weight: var(--weight-display-s);
+  letter-spacing: var(--tracking-display);
+  color: var(--text-h);
+  text-decoration: none;
+}
+
+.panelLinkActive {
+  color: var(--beam);
+}
+
+.panelFoot {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  padding-top: var(--s-4);
+  border-top: 1px solid var(--line);
+}
+
+.panelPhone {
+  font-size: var(--fs-small);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.panelPhone b {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: var(--weight-display-s);
+  letter-spacing: var(--tracking-display-xs);
+  color: var(--text-h);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (min-width: 60rem) {
+  .nav {
+    display: flex;
+    gap: var(--s-3);
+    margin-left: var(--s-5);
+  }
+
+  .cta {
+    display: inline-flex;
+  }
+
+  .menuButton,
+  .phoneButton {
+    display: none;
+  }
+}

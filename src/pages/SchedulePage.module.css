@@ -1,0 +1,25 @@
+.heading {
+  margin-top: var(--s-4);
+  font-size: var(--fs-h1);
+  letter-spacing: var(--tracking-display);
+}
+
+.lead {
+  margin-top: var(--s-2);
+  max-width: 52ch;
+  color: var(--text);
+}
+
+.legend {
+  margin-top: var(--s-3);
+}
+
+.list {
+  margin-top: var(--s-3);
+}
+
+/* Волосяная линия снизу закрывает список: у последнего фильма дня
+   есть визуальный низ, как у остальных строк. */
+.listEnd {
+  border-top: 1px solid var(--line);
+}

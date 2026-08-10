@@ -1,0 +1,176 @@
+.title {
+  margin-top: 0.75rem;
+  font-size: var(--fs-hero);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-display);
+}
+
+.lead {
+  margin-top: var(--s-2);
+  max-width: 54ch;
+  font-size: var(--fs-lead);
+}
+
+.channels {
+  margin-top: var(--s-4);
+}
+
+/* Акция — плашка над меню со сроком действия, а не отдельная картинка. */
+.promo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem var(--s-2);
+  margin-top: var(--s-5);
+  padding: var(--s-3);
+  background-color: var(--curtain);
+  border-radius: var(--radius-m);
+  color: var(--curtain-ink);
+}
+
+.promoTitle {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: var(--weight-display);
+  letter-spacing: var(--tracking-display-s);
+}
+
+.promoValid {
+  font-size: var(--fs-small);
+  opacity: 0.85;
+}
+
+.promoLink {
+  margin-left: auto;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: inherit;
+  white-space: nowrap;
+}
+
+/* Липкая полоса категорий: якорная навигация по меню. */
+.categories {
+  position: sticky;
+  top: var(--header-h);
+  z-index: 3;
+  margin: var(--s-5) calc(var(--gutter) * -1) 0;
+  padding-inline: var(--gutter);
+  background-color: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+
+.categoryList {
+  display: flex;
+  gap: var(--s-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.categoryList::-webkit-scrollbar {
+  display: none;
+}
+
+.categoryLink {
+  display: block;
+  padding-block: 0.875rem;
+  font-size: var(--fs-micro);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-utility);
+  white-space: nowrap;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.categoryLink:hover {
+  color: var(--text-h);
+}
+
+.section {
+  padding-top: var(--s-5);
+}
+
+.sectionTitle {
+  font-size: var(--fs-h2);
+  letter-spacing: var(--tracking-display-s);
+}
+
+.items {
+  display: grid;
+  gap: 0 var(--s-5);
+  margin-top: var(--s-2);
+  grid-template-columns: 1fr;
+}
+
+.item {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-2);
+  padding-block: var(--s-2);
+  border-top: 1px solid var(--line);
+}
+
+.itemBody {
+  min-width: 0;
+  flex: 1;
+}
+
+/* Название блюда — корпусным гротеском: display-фейс здесь превратил бы
+   прайс-лист в набор заголовков. */
+.itemTitle {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: 600;
+  line-height: var(--lh-body);
+  letter-spacing: 0;
+  color: var(--text-h);
+}
+
+.itemTags {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  margin-left: 0.5rem;
+}
+
+.itemDescription {
+  margin-top: 0.125rem;
+  font-size: var(--fs-small);
+  color: var(--text);
+}
+
+.itemWeight {
+  font-size: var(--fs-micro);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-utility);
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.itemPrice {
+  font-family: var(--font-display);
+  font-size: var(--fs-body);
+  font-weight: var(--weight-display-s);
+  letter-spacing: var(--tracking-display-xs);
+  color: var(--text-h);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.disclaimer {
+  margin-top: var(--s-5);
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--line);
+  font-size: var(--fs-small);
+  color: var(--text);
+  max-width: 60ch;
+}
+
+@media (min-width: 64rem) {
+  .items {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

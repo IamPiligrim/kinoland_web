@@ -1,0 +1,18 @@
+.title {
+  margin-top: 0.75rem;
+  font-size: var(--fs-hero);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-display);
+}
+
+.text {
+  margin-top: var(--s-2);
+  max-width: 48ch;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  margin-top: var(--s-4);
+}

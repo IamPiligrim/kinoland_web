@@ -1,0 +1,30 @@
+/* Длинный текст: новости, политики, правила. Мера строки держится
+   в районе 68 символов — дальше глаз теряет начало следующей строки. */
+
+.prose {
+  max-width: 68ch;
+  font-size: var(--fs-lead);
+}
+
+.prose > * + * {
+  margin-top: var(--s-2);
+}
+
+.prose h2 {
+  margin-top: var(--s-4);
+  font-size: var(--fs-h3);
+}
+
+.prose ul {
+  margin-left: 1.1rem;
+  padding: 0;
+  list-style: disc;
+}
+
+.prose li + li {
+  margin-top: 0.5rem;
+}
+
+.prose a {
+  color: var(--beam);
+}

@@ -1,0 +1,144 @@
+.footer {
+  position: relative;
+  margin-top: var(--section-y);
+  padding-block: var(--s-5) var(--s-4);
+}
+
+/* Та же перфорация плёнки, что между секциями главной — подвал закрывает
+   «бобину», а не обрывается волосяной линией. */
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background-image: radial-gradient(circle, var(--perf-dot) 1.4px, transparent 1.6px);
+  background-repeat: repeat-x;
+  background-position: left center;
+  background-size: var(--perf-size) 6px;
+}
+
+.grid {
+  display: grid;
+  gap: var(--s-5) var(--s-4);
+  grid-template-columns: 1fr;
+}
+
+.title {
+  display: block;
+  margin-bottom: var(--s-2);
+  font-size: var(--fs-micro);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-utility);
+  color: var(--text);
+}
+
+.address {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: var(--weight-display-s);
+  font-style: normal;
+  letter-spacing: var(--tracking-display-xs);
+  color: var(--text-h);
+}
+
+.mapLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: var(--s-2);
+  font-size: var(--fs-small);
+  color: var(--text);
+}
+
+.mapLink:hover {
+  color: var(--beam);
+}
+
+.phones {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+}
+
+.phone {
+  display: block;
+  text-decoration: none;
+}
+
+.phoneNumber {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-weight: var(--weight-display-s);
+  letter-spacing: var(--tracking-display-xs);
+  color: var(--text-h);
+  font-variant-numeric: tabular-nums;
+}
+
+.phone:hover .phoneNumber {
+  color: var(--beam);
+}
+
+.phoneLabel {
+  font-size: var(--fs-micro);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-utility);
+  color: var(--text);
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  font-size: var(--fs-small);
+}
+
+.links a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+.links a:hover {
+  color: var(--beam);
+}
+
+.social {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: var(--s-1);
+  font-size: var(--fs-small);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.social:hover {
+  color: var(--beam);
+}
+
+.legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem var(--s-3);
+  margin-top: var(--s-5);
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--line);
+  font-size: var(--fs-micro);
+  color: var(--text);
+}
+
+@media (min-width: 40rem) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 64rem) {
+  .grid {
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: var(--s-4);
+  }
+}

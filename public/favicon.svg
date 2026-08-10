@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Знак «Киноленда»: кадр плёнки с перфорацией сверху и снизу — та же
+       сигнатура, что и на самом сайте, вместо прежнего луча прожектора. -->
+  <rect width="32" height="32" rx="7" fill="#12191a" />
+  <rect x="7" y="10" width="18" height="12" rx="2" fill="none" stroke="#e2794a" stroke-width="2" />
+  <circle cx="11" cy="5.5" r="1.4" fill="#f4efe3" />
+  <circle cx="16" cy="5.5" r="1.4" fill="#f4efe3" />
+  <circle cx="21" cy="5.5" r="1.4" fill="#f4efe3" />
+  <circle cx="11" cy="26.5" r="1.4" fill="#f4efe3" />
+  <circle cx="16" cy="26.5" r="1.4" fill="#f4efe3" />
+  <circle cx="21" cy="26.5" r="1.4" fill="#f4efe3" />
+</svg>

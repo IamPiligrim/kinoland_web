@@ -1,0 +1,10 @@
+.title {
+  margin-top: 0.75rem;
+  max-width: 20ch;
+  font-size: var(--fs-h1);
+  letter-spacing: var(--tracking-display);
+}
+
+.body {
+  margin-top: var(--s-4);
+}

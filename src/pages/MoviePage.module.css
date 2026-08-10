@@ -1,0 +1,106 @@
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--fs-micro);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-utility);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.back:hover {
+  color: var(--beam);
+}
+
+.hero {
+  display: grid;
+  gap: var(--s-3);
+  grid-template-columns: 1fr;
+  margin-top: var(--s-4);
+}
+
+.poster {
+  max-width: 15rem;
+}
+
+.title {
+  font-size: var(--fs-h1);
+  letter-spacing: var(--tracking-display);
+}
+
+.original {
+  margin-top: 0.5rem;
+  color: var(--text);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  margin-top: var(--s-2);
+  font-size: var(--fs-small);
+  color: var(--text);
+}
+
+.synopsis {
+  margin-top: var(--s-3);
+  max-width: 60ch;
+  font-size: var(--fs-lead);
+  color: var(--text-h);
+}
+
+.credits {
+  display: grid;
+  gap: var(--s-2) var(--s-4);
+  margin-top: var(--s-4);
+  grid-template-columns: 1fr;
+}
+
+.creditTerm {
+  font-size: var(--fs-micro);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-utility);
+  color: var(--text);
+}
+
+.creditValue {
+  margin: 0.25rem 0 0;
+  color: var(--text-h);
+}
+
+.trailer {
+  margin-top: var(--s-5);
+  max-width: 44rem;
+}
+
+.days {
+  margin-top: var(--s-3);
+}
+
+.day {
+  padding-block: var(--s-3);
+  border-top: 1px solid var(--line);
+}
+
+.dayTitle {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: var(--weight-display-s);
+  letter-spacing: var(--tracking-display-xs);
+  color: var(--text-h);
+  margin-bottom: var(--s-2);
+}
+
+@media (min-width: 48rem) {
+  .hero {
+    grid-template-columns: 15rem 1fr;
+    gap: var(--s-5);
+  }
+
+  .credits {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

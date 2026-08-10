@@ -1,0 +1,25 @@
+.title {
+  margin-top: 0.75rem;
+  font-size: var(--fs-hero);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-display);
+}
+
+.grid {
+  display: grid;
+  gap: var(--s-4);
+  margin-top: var(--s-5);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 48rem) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 64rem) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
