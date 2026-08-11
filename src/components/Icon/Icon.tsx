@@ -18,7 +18,7 @@ export function Icon({ name, label, size = 20 }: IconProps) {
       aria-hidden={label ? undefined : 'true'}
       focusable="false"
     >
-      <use href={`/icons.svg#${name}`} />
+      <use href={`${import.meta.env.BASE_URL}icons.svg#${name}`} />
     </svg>
   )
 }
