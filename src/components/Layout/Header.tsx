@@ -4,6 +4,7 @@ import { boxOfficePhone } from '../../content/contacts.ts'
 import { AFISHA_CINEMA_URL } from '../../content/links.ts'
 import { ButtonExternal } from '../Button/Button.tsx'
 import { Icon } from '../Icon/Icon.tsx'
+import { ThemeToggle } from '../ThemeToggle/ThemeToggle.tsx'
 import { Container } from './Container.tsx'
 import { primaryNav } from './navigation.ts'
 import styles from './Header.module.css'
@@ -54,6 +55,8 @@ export function Header() {
         </nav>
 
         <div className={styles.actions}>
+          <ThemeToggle className={styles.iconButton} />
+
           <a
             className={`${styles.iconButton} ${styles.phoneButton}`}
             href={boxOfficePhone.href}
